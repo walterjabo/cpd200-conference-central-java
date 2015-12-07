@@ -27,7 +27,7 @@ public class ConferenceApi {
 
     /*
      * Get the display name from the user's email. For example, if the email is
-     * lemoncake@example.com, then the display name becomes "lemoncake."
+     * janedoe@example.com, then the display name becomes "janedoe"
      */
     private static String extractDefaultDisplayNameFromEmail(String email) {
         return email == null ? null : email.substring(0, email.indexOf("@"));
@@ -48,11 +48,6 @@ public class ConferenceApi {
 
     // Declare this method as a method available externally through Endpoints
     @ApiMethod(name = "saveProfile", path = "profile", httpMethod = HttpMethod.POST)
-    // The request that invokes this method should provide data that
-    // conforms to the fields defined in ProfileForm
-
-    // TODO 1 Pass the ProfileForm parameter
-    // TODO 2 Pass the User parameter
     public Profile saveProfile() throws UnauthorizedException {
 
         String userId = null;
@@ -60,30 +55,18 @@ public class ConferenceApi {
         String displayName = "Your name will go here";
         TeeShirtSize teeShirtSize = TeeShirtSize.NOT_SPECIFIED;
 
-        // TODO 2
-        // If the user is not logged in, throw an UnauthorizedException
+        // Set the displayName to the value sent by the ProfileForm
+        // displayName = profileForm.getDisplayName();
 
-        // TODO 1
         // Set the teeShirtSize to the value sent by the ProfileForm, if sent
         // otherwise leave it as the default value
-
-        // TODO 1
-        // Set the displayName to the value sent by the ProfileForm, if sent
-        // otherwise set it to null
-
-        // TODO 2
-        // Get the userId and mainEmail
-
-        // TODO 2
-        // If the displayName is null, set it to default value based on the user's email
-        // by calling extractDefaultDisplayNameFromEmail(...)
+        // if (profileForm.getTeeShirtSize() != null) {
+        //     teeShirtSize = profileForm.getTeeShirtSize();
+        // }
 
         // Create a new Profile entity from the
         // userId, displayName, mainEmail and teeShirtSize
         Profile profile = new Profile(userId, displayName, mainEmail, teeShirtSize);
-
-        // TODO 3 (In Lesson 3)
-        // Save the Profile entity in the datastore
 
         // Return the profile
         return profile;

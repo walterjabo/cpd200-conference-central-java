@@ -15,7 +15,7 @@
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
- <security-constraint>
+    <security-constraint>
         <web-resource-collection>
             <web-resource-name>all</web-resource-name>
             <url-pattern>/*</url-pattern>
