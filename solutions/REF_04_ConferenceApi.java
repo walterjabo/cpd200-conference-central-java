@@ -48,7 +48,8 @@ public class ConferenceApi {
 
     // Declare this method as a method available externally through Endpoints
     @ApiMethod(name = "saveProfile", path = "profile", httpMethod = HttpMethod.POST)
-    public Profile saveProfile(ProfileForm profileForm) throws UnauthorizedException {
+    public Profile saveProfile(final User user, ProfileForm profileForm) 
+            throws UnauthorizedException {
 
         String userId = null;
         String mainEmail = null;
