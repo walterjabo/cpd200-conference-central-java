@@ -55,6 +55,11 @@ public class ConferenceApi {
         String displayName = "Your name will go here";
         TeeShirtSize teeShirtSize = TeeShirtSize.NOT_SPECIFIED;
 
+        // If the user is not logged in, throw an UnauthorizedException
+        // if (user == null) {
+        //     throw new UnauthorizedException("Authorization required");
+        // }
+
         // Set the displayName to the value sent by the ProfileForm
         // displayName = profileForm.getDisplayName();
 
@@ -63,6 +68,16 @@ public class ConferenceApi {
         // if (profileForm.getTeeShirtSize() != null) {
         //     teeShirtSize = profileForm.getTeeShirtSize();
         // }
+        
+        // Get the userId and mainEmail
+        // mainEmail = TODO
+        // userId = TODO
+
+        // If the displayName is null, set it to the default value based on the user's email
+        // by calling extractDefaultDisplayNameFromEmail(...)
+        // if (displayName == null) {
+        //     displayName = extractDefaultDisplayNameFromEmail(TODO);
+        //    }
 
         // Create a new Profile entity from the
         // userId, displayName, mainEmail and teeShirtSize
