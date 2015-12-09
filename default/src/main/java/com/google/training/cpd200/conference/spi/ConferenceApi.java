@@ -25,6 +25,9 @@ import com.googlecode.objectify.Key;
     )
 public class ConferenceApi {
 
+    // private static final Logger LOG = Logger.getLogger(
+    //        ConferenceApi.class.getName());
+
     /*
      * Get the display name from the user's email. For example, if the email is
      * janedoe@example.com, then the display name becomes "janedoe"
@@ -48,7 +51,8 @@ public class ConferenceApi {
 
     // Declare this method as a method available externally through Endpoints
     @ApiMethod(name = "saveProfile", path = "profile", httpMethod = HttpMethod.POST)
-    public Profile saveProfile() throws UnauthorizedException {
+    public Profile saveProfile()
+            throws UnauthorizedException {
 
         String userId = null;
         String mainEmail = null;
