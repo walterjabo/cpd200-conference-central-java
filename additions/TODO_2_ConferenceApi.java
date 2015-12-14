@@ -1,3 +1,4 @@
+
     /**
     * Gets the Profile entity for the current user
     * or creates it if it doesn't exist
