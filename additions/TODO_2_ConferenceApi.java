@@ -1,4 +1,24 @@
     /**
+    * Gets the Profile entity for the current user
+    * or creates it if it doesn't exist
+    * @param user
+    * @return user's Profile
+    */
+    private static Profile getProfileFromUser(User user) {
+        // First fetch the user's Profile from the datastore.
+        Profile profile = ofy().load().key(
+                Key.create(Profile.class, user.getUserId())).now();
+        if (profile == null) {
+            // Create a new Profile if it doesn't exist.
+            // Use default displayName and teeShirtSize
+            String email = user.getEmail();
+            profile = new Profile(user.getUserId(),
+                    extractDefaultDisplayNameFromEmail(email), email, TeeShirtSize.NOT_SPECIFIED);
+       }
+       return profile;
+   }
+
+    /**
      * Creates a new Conference object and stores it to the datastore.
      *
      * @param user A user who invokes this method, null when the user is not signed in.

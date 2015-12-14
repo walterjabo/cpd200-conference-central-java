@@ -1,4 +1,4 @@
-package com.google.devrel.training.conference.form;
+package com.google.training.cpd200.conference.form;
 
 import com.google.common.collect.ImmutableList;
 

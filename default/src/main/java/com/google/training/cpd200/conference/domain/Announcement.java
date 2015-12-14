@@ -1,4 +1,4 @@
-package com.google.devrel.training.conference.domain;
+package com.google.training.cpd200.conference.domain;
 
 /**
  * A simple wrapper for announcement message.

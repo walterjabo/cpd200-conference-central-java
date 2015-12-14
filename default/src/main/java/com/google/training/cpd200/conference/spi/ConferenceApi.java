@@ -1,5 +1,6 @@
 package com.google.training.cpd200.conference.spi;
 
+// import static com.google.training.cpd200.conference.service.OfyService.factory;
 import static com.google.training.cpd200.conference.service.OfyService.ofy;
 
 import com.google.api.server.spi.config.Api;
@@ -111,7 +112,7 @@ public class ConferenceApi {
         // load the Profile Entity
         String userId = ""; // TODO
         Key key = null; // TODO
-        Profile profile = null; // TODO load the Profile entity
+        Profile profile = null;
         return profile;
     }
 }
