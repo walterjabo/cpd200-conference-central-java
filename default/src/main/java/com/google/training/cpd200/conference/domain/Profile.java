@@ -38,7 +38,7 @@ public class Profile {
     /**
      * Keys of the conferences that this user registers to attend.
      */
-    private List<String> conferenceKeysToAttend = new ArrayList<>(0);
+    // private List<String> conferenceKeysToAttend = new ArrayList<>(0);
 
     /**
      * Just making the default constructor private.
@@ -95,9 +95,9 @@ public class Profile {
      * Getter for conferenceIdsToAttend.
      * @return an immutable copy of conferenceIdsToAttend.
      */
-    public List<String> getConferenceKeysToAttend() {
-        return ImmutableList.copyOf(conferenceKeysToAttend);
-    }
+    // public List<String> getConferenceKeysToAttend() {
+    //    return ImmutableList.copyOf(conferenceKeysToAttend);
+    // }
 
     /**
      * Update the Profile with the given displayName and teeShirtSize
