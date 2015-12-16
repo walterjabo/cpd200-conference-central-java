@@ -13,19 +13,19 @@
         <property name="name" direction="asc"/>
     </datastore-index>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 1 times in query history -->
     <datastore-index kind="Conference" ancestor="false" source="auto">
         <property name="topics" direction="asc"/>
         <property name="name" direction="asc"/>
     </datastore-index>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 1 times in query history -->
     <datastore-index kind="Conference" ancestor="false" source="auto">
         <property name="month" direction="asc"/>
         <property name="name" direction="asc"/>
     </datastore-index>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 1 times in query history -->
     <datastore-index kind="Conference" ancestor="false" source="auto">
         <property name="maxAttendees" direction="asc"/>
         <property name="name" direction="asc"/>
