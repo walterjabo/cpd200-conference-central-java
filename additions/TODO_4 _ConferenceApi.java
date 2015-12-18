@@ -1,4 +1,9 @@
 
+    @ApiMethod(
+            name = "filterPlayground",
+            path = "filterPlayground",
+            httpMethod = HttpMethod.POST
+    )
     public List<Conference> filterPlayground() {
         Query<Conference> query = ofy().load().type(Conference.class);
 
