@@ -1,4 +1,3 @@
-
     <automatic-scaling>
       <min-idle-instances>0</min-idle-instances>
       <max-idle-instances>automatic</max-idle-instances>

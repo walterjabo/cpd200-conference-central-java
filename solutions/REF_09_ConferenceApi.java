@@ -12,6 +12,7 @@ import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
 import com.google.appengine.api.users.User;
 import com.google.training.cpd200.conference.Constants;
+import com.google.training.cpd200.conference.domain.Alert;
 import com.google.training.cpd200.conference.domain.Conference;
 import com.google.training.cpd200.conference.domain.Profile;
 import com.google.training.cpd200.conference.form.ConferenceForm;
@@ -363,7 +364,7 @@ public class ConferenceApi {
         }
         return conference;
     }
-
+  
     /**
      * Registers to the specified Conference.
      *
@@ -413,6 +414,24 @@ public class ConferenceApi {
         });
         // NotFoundException is actually thrown here.
         return new WrappedBoolean(result.getResult());
+    }
+
+    /**
+     * Returns the latest Alert object.
+     *
+     * @return the latest Alert object.
+     */
+    @ApiMethod(
+            name = "getAlert",
+            path = "alert",
+            httpMethod = HttpMethod.GET
+    )
+    public Alert getAlert() {
+        List<Alert> alertList = ofy().load().type(Alert.class).order("-date").list();
+        if (alertList != null) {
+            return alertList.get(0);
+        }
+        return null;
     }
 
     @ApiMethod(

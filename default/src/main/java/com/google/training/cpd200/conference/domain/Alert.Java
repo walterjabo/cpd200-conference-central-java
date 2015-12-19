@@ -1,7 +1,11 @@
 package com.google.training.cpd200.conference.domain;
 
+import com.google.api.server.spi.config.AnnotationBoolean;
+import com.google.api.server.spi.config.ApiResourceProperty;
+import com.googlecode.objectify.Key;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Parent;
 
 import java.util.Date;
 
@@ -28,6 +32,13 @@ public class Alert {
      * Alert's date.
      */
     private Date date;
+  
+    /**
+     * Holds Alert key as the parent.
+     */
+    @Parent
+    @ApiResourceProperty(ignored = AnnotationBoolean.TRUE)
+    private Key<Alert> alertKey;
 
     /**
      * Set the default constructor to private.
