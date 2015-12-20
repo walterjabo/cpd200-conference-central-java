@@ -24,6 +24,7 @@ import com.googlecode.objectify.Work;
 import com.googlecode.objectify.cmd.Query;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -452,7 +453,7 @@ public class ConferenceApi {
         if (user == null) {
             throw new UnauthorizedException("Authorization required");
         }
-        Profile profile = ofy().load().key(Key.create(Profile.class, getUserId(user))).now();
+        Profile profile = ofy().load().key(Key.create(Profile.class, user.getUserId())).now();
         if (profile == null) {
             throw new NotFoundException("Profile doesn't exist.");
         }
