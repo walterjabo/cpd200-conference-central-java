@@ -24,9 +24,12 @@ public class SetAnnouncementServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    	
-      	// Query for conferences with less than 5 seats lef
+            throws ServletException, IOException IllegalStateException {
+        if (request.getHeader("X-AppEngine-Cron") == null) {
+          throw new IllegalStateException("attempt to access cron handler directly, " +
+                                          "missing custom App Engine header");
+        }
+        // Query for conferences with less than 5 seats left
     	Iterable<Conference> iterable = ofy().load().type(Conference.class)
     	                .filter("seatsAvailable <", 5)
     	                .filter("seatsAvailable >", 0);

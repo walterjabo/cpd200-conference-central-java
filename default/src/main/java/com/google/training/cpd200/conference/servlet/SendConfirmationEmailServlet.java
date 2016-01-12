@@ -28,7 +28,11 @@ public class SendConfirmationEmailServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, IllegalStateException {
+        if (request.getHeader("X-AppEngine-QueueName") == null) {
+            throw new IllegalStateException("attempt to access task handler directly, " +
+                                            "missing custom App Engine header");
+        }
         String email = request.getParameter("email");
         String conferenceInfo = request.getParameter("conferenceInfo");
         Properties props = new Properties();
