@@ -24,7 +24,7 @@ public class SetAnnouncementServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException IllegalStateException {
+            throws ServletException, IOException, IllegalStateException {
         if (request.getHeader("X-AppEngine-Cron") == null) {
           throw new IllegalStateException("attempt to access cron handler directly, " +
                                           "missing custom App Engine header");
