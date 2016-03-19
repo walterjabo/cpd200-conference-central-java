@@ -38,5 +38,5 @@
         Key<Profile> userKey = Key.create(Profile.class, userId);
         return ofy().load().type(Conference.class)
                 .ancestor(userKey)
-                .order("name").list();
+                .list();
     }
