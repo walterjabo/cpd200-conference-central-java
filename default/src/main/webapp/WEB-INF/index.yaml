@@ -1,1 +1,6 @@
 indexes:
+
+- kind: Conference
+  properties:
+  - name: city
+  - name: name
