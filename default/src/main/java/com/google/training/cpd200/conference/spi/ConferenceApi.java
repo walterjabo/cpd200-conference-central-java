@@ -28,8 +28,7 @@ import java.util.logging.Logger;
     )
 public class ConferenceApi {
 
-    // private static final Logger LOG = Logger.getLogger(
-    //        ConferenceApi.class.getName());
+    private static final Logger LOG = Logger.getLogger(ConferenceApi.class.getName());
 
     /*
      * Get the display name from the user's email. For example, if the email is
