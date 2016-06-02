@@ -85,16 +85,15 @@ indexes:
   - name: topics
   - name: name
 
-- ­kind: Alert
+- kind: Alert
   ancestor: yes
   properties:
   - ­name: date
     direction: desc
 
-- ­kind: Conference
+- kind: Conference
   properties:
   - name: city
   ­- name: maxAttendees
   ­- name: month
-  - ­name: name
-
+  - name: name
