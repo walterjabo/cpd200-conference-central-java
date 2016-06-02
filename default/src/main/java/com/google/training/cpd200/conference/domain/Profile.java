@@ -4,10 +4,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.training.cpd200.conference.form.ProfileForm.TeeShirtSize;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
-
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Profile class stores user's profile data.
  */
@@ -40,7 +38,7 @@ public class Profile {
     /**
      * Keys of the conferences that this user registers to attend.
      */
-    // private List<String> conferenceKeysToAttend = new ArrayList<>(0);
+    private List<String> conferenceKeysToAttend = new ArrayList<>(0);
 
     /**
      * Just making the default constructor private.
@@ -97,9 +95,9 @@ public class Profile {
      * Getter for conferenceIdsToAttend.
      * @return an immutable copy of conferenceIdsToAttend.
      */
-    // public List<String> getConferenceKeysToAttend() {
-    //    return ImmutableList.copyOf(conferenceKeysToAttend);
-    // }
+    public List<String> getConferenceKeysToAttend() {
+       return ImmutableList.copyOf(conferenceKeysToAttend);
+    }
 
     /**
      * Update the Profile with the given displayName and teeShirtSize
@@ -123,9 +121,9 @@ public class Profile {
      *
      * @param conferenceKey a websafe String representation of the Conference Key.
      */
-    // public void addToConferenceKeysToAttend(String conferenceKey) {
-    //     conferenceKeysToAttend.add(conferenceKey);
-    // }
+    public void addToConferenceKeysToAttend(String conferenceKey) {
+        conferenceKeysToAttend.add(conferenceKey);
+    }
 
     /**
      * Remove the conferenceId from conferenceIdsToAttend.
