@@ -13,6 +13,9 @@ import com.google.training.cpd200.conference.form.ProfileForm;
 import com.google.training.cpd200.conference.form.ProfileForm.TeeShirtSize;
 import com.googlecode.objectify.Key;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Defines conference APIs.
  */
@@ -112,6 +115,7 @@ public class ConferenceApi {
         String userId = ""; // TODO
         Key key = null; // TODO
         Profile profile = null;
+        LOG.log(Level.INFO, "Did run getProfile()");
         return profile;
     }
 }

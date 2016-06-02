@@ -1,6 +1,6 @@
 application: cp100-dev2
 module: admin
-version: alpha-001
+version: alpha-002
 runtime: go
 api_version: go1
 

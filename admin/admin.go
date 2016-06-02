@@ -37,6 +37,8 @@ func alertKey(c appengine.Context) *datastore.Key {
 // [START func_root]
 func root(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
+	c.Debugf("Did run the root function.")
+
 	// Ancestor queries, as shown here, are strongly consistent with Cloud Datastore.
 	// Queries that span entity groups are eventually
 	// consistent. If we omitted the .Ancestor from this query there would be
