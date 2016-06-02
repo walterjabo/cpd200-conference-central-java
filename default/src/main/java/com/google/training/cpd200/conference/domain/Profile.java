@@ -12,11 +12,13 @@ import java.util.List;
  * Profile class stores user's profile data.
  */
 // TODO indicate that this class is an Entity
+@Entity
 public class Profile {
     /**
      *  Use userId as the datastore key.
      */
     // TODO indicate that the userId is to be used in the Entity's key
+    @Id
     private String userId;
 
     /**
