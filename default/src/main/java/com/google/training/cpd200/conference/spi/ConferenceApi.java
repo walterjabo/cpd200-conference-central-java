@@ -12,6 +12,9 @@ import com.google.api.server.spi.response.NotFoundException;
 import com.google.api.server.spi.response.UnauthorizedException;
 import com.google.appengine.api.memcache.MemcacheService;
 import com.google.appengine.api.memcache.MemcacheServiceFactory;
+import com.google.appengine.api.taskqueue.Queue;
+import com.google.appengine.api.taskqueue.QueueFactory;
+import com.google.appengine.api.taskqueue.TaskOptions;
 import com.google.appengine.api.users.User;
 import com.google.training.cpd200.conference.Constants;
 import com.google.training.cpd200.conference.domain.Alert;
@@ -222,6 +225,14 @@ public class ConferenceApi {
         // Save Conference and Profile Entities
         ofy().save().entities(conference, profile).now();
     
+
+
+        final Queue queue = QueueFactory.getDefaultQueue();
+        queue.add(ofy().getTransaction(),
+                TaskOptions.Builder.withUrl("/tasks/send_confirmation_email")
+                .param("email", profile.getMainEmail())
+                .param("conferenceInfo", conference.toString()));
+
         return conference;
     }
 

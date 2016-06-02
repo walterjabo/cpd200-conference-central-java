@@ -12,6 +12,7 @@
         <servlet-name>SystemServiceServlet</servlet-name>
         <url-pattern>/_ah/spi/*</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>SendConfirmationEmailServlet</servlet-name>
         <servlet-class>com.google.training.cpd200.conference.servlet.SendConfirmationEmailServlet</servlet-class>
@@ -46,6 +47,7 @@
             <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
