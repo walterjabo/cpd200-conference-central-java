@@ -91,7 +91,7 @@ indexes:
   - name: topics
   - name: name
 
-- kind:Conference
+- kind: Conference
   properties:
   - name: seatsAvailable
   - name: name
