@@ -1,4 +1,4 @@
-application: your-project-id
+application: cp100-dev2
 module: admin
 version: alpha-001
 runtime: go

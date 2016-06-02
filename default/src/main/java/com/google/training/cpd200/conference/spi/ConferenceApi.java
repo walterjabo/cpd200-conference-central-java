@@ -51,7 +51,7 @@ public class ConferenceApi {
 
     // Declare this method as a method available externally through Endpoints
     @ApiMethod(name = "saveProfile", path = "profile", httpMethod = HttpMethod.POST)
-    public Profile saveProfile()
+    public Profile saveProfile(ProfileForm profileForm)
             throws UnauthorizedException {
 
         String userId = null;
@@ -65,13 +65,13 @@ public class ConferenceApi {
         // }
 
         // Set the displayName to the value sent by the ProfileForm
-        // displayName = profileForm.getDisplayName();
+        displayName = profileForm.getDisplayName();
 
         // Set the teeShirtSize to the value sent by the ProfileForm, if sent
         // otherwise leave it as the default value
-        // if (profileForm.getTeeShirtSize() != null) {
-        //     teeShirtSize = profileForm.getTeeShirtSize();
-        // }
+        if (profileForm.getTeeShirtSize() != null) {
+            teeShirtSize = profileForm.getTeeShirtSize();
+        }
         
         // Get the userId and mainEmail
         // mainEmail = TODO
