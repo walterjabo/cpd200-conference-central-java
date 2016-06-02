@@ -12,6 +12,7 @@ import com.google.training.cpd200.conference.Constants;
 import com.google.training.cpd200.conference.domain.Conference;
 import com.google.training.cpd200.conference.domain.Profile;
 import com.google.training.cpd200.conference.form.ConferenceForm;
+import com.google.training.cpd200.conference.form.ConferenceQueryForm;
 import com.google.training.cpd200.conference.form.ProfileForm;
 import com.google.training.cpd200.conference.form.ProfileForm.TeeShirtSize;
 import com.googlecode.objectify.Key;
